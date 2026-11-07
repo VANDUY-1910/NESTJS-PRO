@@ -5,7 +5,7 @@ export class CreateTasksTable1793700018380 implements MigrationInterface {
 
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query(`
-      CREATE TABLE "tasks" (
+      CREATE TABLE IF NOT EXISTS "tasks" (
         "id" uuid NOT NULL DEFAULT uuid_generate_v4(),
         "title" varchar(255) NOT NULL,
         "category" varchar(255),

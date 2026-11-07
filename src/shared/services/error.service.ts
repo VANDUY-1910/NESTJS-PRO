@@ -9,6 +9,7 @@ import * as _ from 'lodash';
 export class ErrorService {
   constructor(private readonly configService: ConfigService) {}
   message(err: string | object, i18n: I18nContext, stackTrace: any) {
+    const i18nCtx = i18n || I18nContext.current();
     const errorMessage = _.isArray(err['message'])
       ? err['message'][0]
       : err['message'];
