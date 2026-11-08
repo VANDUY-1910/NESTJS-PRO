@@ -25,6 +25,7 @@ import { NotFoundExceptionFilter } from '@core/filters/not-found.filter';
 import { UnprocessableEntityExceptionFilter } from '@core/filters/unprocess-entity.filter';
 import { OrderModule } from '@modules/order/order.module';
 import { TasksModule } from '@modules/tasks/tasks.module';
+import { MailModule } from '@modules/mail/mail.module';
 
 @Module({
   imports: [
@@ -35,6 +36,7 @@ import { TasksModule } from '@modules/tasks/tasks.module';
     UserModule,
     OrderModule,
     TasksModule,
+    MailModule,
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: '.env',
